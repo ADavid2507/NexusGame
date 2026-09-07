@@ -21,7 +21,7 @@ public class Player {
     public void update(float delta, List<Room> crRoom) {
         Vector2 direccion = new Vector2();
         float dx, dy;
-        float maxSpeed = 100f;
+        float maxSpeed = 150f;
 
         if(Gdx.input.isKeyPressed(Input.Keys.W) || Gdx.input.isKeyPressed(Input.Keys.UP)) direccion.y += maxSpeed;
         if(Gdx.input.isKeyPressed(Input.Keys.S) || Gdx.input.isKeyPressed(Input.Keys.DOWN)) direccion.y -= maxSpeed;

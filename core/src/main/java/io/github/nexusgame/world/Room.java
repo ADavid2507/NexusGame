@@ -116,7 +116,16 @@ public class Room {
         for (Rectangle wall: wallBounds){
             renderer.rect(wall.x, wall.y, wall.width, wall.height);
         }
+        for (Door door: doors){
+            Rectangle trigger = door.getTrigger();
+            if (door.isLocked() && trigger != null){
+                renderer.setColor(Color.RED);
+                renderer.rect(trigger.x, trigger.y, trigger.width, trigger.height);
+            }
+
+        }
     }
+
 
 
 }

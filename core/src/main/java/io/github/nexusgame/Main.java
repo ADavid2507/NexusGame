@@ -50,10 +50,10 @@ public class Main extends ApplicationAdapter {
         List<Door> door3 = new ArrayList<>();
         door3.add(new Door(WallSide.TOP, 600, 680, "room2", 100,20, true));
 
-        rooms.add(new Room(340, 210, 400, 300, Color.WHITE, Color.RED, door2));
-        rooms.add(new Room(140, 210, 200, 300, Color.WHITE, Color.RED, door1));
+        rooms.add(new Room(340, 210, 400, 300, Color.WHITE, Color.GRAY, door2));
+        rooms.add(new Room(140, 210, 200, 300, Color.WHITE, Color.GRAY, door1));
 
-        rooms.add(new Room(540, 10, 200, 200, Color.WHITE, Color.RED, door3));
+        rooms.add(new Room(540, 10, 200, 200, Color.WHITE, Color.GRAY, door3));
 
     }
 
