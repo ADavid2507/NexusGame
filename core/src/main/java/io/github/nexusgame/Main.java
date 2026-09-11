@@ -2,6 +2,7 @@ package io.github.nexusgame;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -61,6 +62,11 @@ public class Main extends ApplicationAdapter {
     public void render() {
         ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
         player.update(Gdx.graphics.getDeltaTime(), rooms);
+        if (Gdx.input.isKeyJustPressed(Input.Keys.E)) {
+            for (Room room: rooms){
+                room.interactWithDoors(player.bounds);
+            }
+        }
 
         camera.position.set(player.bounds.x, player.bounds.y, 0);
         camera.update();

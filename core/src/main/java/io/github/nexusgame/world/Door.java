@@ -2,6 +2,7 @@ package io.github.nexusgame.world;
 
 import com.badlogic.gdx.math.Rectangle;
 
+
 public class Door {
     private WallSide side;
     private float gapInicio, gapFinal;
@@ -18,6 +19,22 @@ public class Door {
         this.spawnX = spawnX;
         this.spawnY = spawnY;
         this.locked = locked;
+    }
+
+    public boolean canInteract(Rectangle playerBounds){
+        if (getTrigger() == null) return false;
+
+        Rectangle interactionZone = new Rectangle(getTrigger());
+        interactionZone.x -= 20;
+        interactionZone.y -= 20;
+        interactionZone.width += 40;
+        interactionZone.height += 40;
+        if (!interactionZone.overlaps(playerBounds)) return false;
+        return true;
+    }
+
+    public void unlock(){
+        if (isLocked()) locked = false;
     }
 
     public boolean isLocked() {

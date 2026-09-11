@@ -101,6 +101,14 @@ public class Room {
         return true;
     }
 
+    public void interactWithDoors(Rectangle player){
+        for (Door door : doors) {
+            if (door.canInteract(player)) {
+                door.unlock();
+                System.out.println("Door unlocked");
+            }
+        }
+    }
 
     public Door checkDoorTrigger(Rectangle player) {
         for (Door door: doors){
